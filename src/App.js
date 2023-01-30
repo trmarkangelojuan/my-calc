@@ -29,11 +29,18 @@ export default function App() {
     e.preventDefault();
     let oldValue;
     let current = disp + " ";
-    if(isClick){
-      oldValue = current.replace(/[-error0+*/ ]/g, "");
-    } else{
-      oldValue = current.replace(/[0error ]/g, "");
+
+    if(parseInt(disp) > 0){
+      oldValue = current.replace(/[error ]/g, "");
+    } else {
+      if(isClick){
+        oldValue = current.replace(/[-error0+*/ ]/g, "");
+      } else{
+        oldValue = current.replace(/[0error ]/g, "");
+      }
     }
+
+    
     let newValue = e.target.innerHTML;
     let finalDisp = oldValue + newValue; 
     setDisp(finalDisp);
