@@ -72,7 +72,7 @@ export default function App() {
         setDisp('error');
         setAnswered(true);
       } else {
-        setDisp("nasan po yung offboarding form?");
+        setDisp(ans);
         setAnswered(true);
       }
     }
