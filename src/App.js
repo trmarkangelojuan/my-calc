@@ -1,36 +1,55 @@
 import './App.css';
+import { useState } from 'react';
 
-
-function Button({val}){
+function Button({val, onclick}){
   return (
     <div>
-      <button className='button'>{val}</button>
+      <button onClick={onclick} className='button'>{val}</button>
     </div>
   );
 }
 
+function Display({val}){
+  return (
+    <div className='displaySection'>
+        <input value={val} type={'text'}/>
+      </div>
+  );
+}
+
+
 function App() {
+  const [value, setVal] = useState('');
+
+  const numberClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    setVal(value);
+  };
+
+  
   return (
     <div className="body">
-      <div className='displaySection'></div>
 
+      <Display val={value}/>
+      
       <div className='buttonsSection'>
-        <Button val='/'/>
-        <Button val={9}/>
-        <Button val={8}/>
-        <Button val={7}/>
-        <Button val='*'/>
-        <Button val={6}/>
-        <Button val={5}/>
-        <Button val={4}/>
-        <Button val='-'/>
-        <Button val={3}/>
-        <Button val={2}/>
-        <Button val={1}/>
-        <Button val='+'/>
-        <Button val='='/>
-        <Button val={0}/>
-        <Button val='clr'/>
+        <Button val='/' onclick={numberClickHandler}/>
+        <Button val={9} onclick={numberClickHandler}/>
+        <Button val={8} onclick={numberClickHandler}/>
+        <Button val={7} onclick={numberClickHandler}/>
+        <Button val='*' onclick={numberClickHandler}/>
+        <Button val={6} onclick={numberClickHandler}/>
+        <Button val={5} onclick={numberClickHandler}/>
+        <Button val={4} onclick={numberClickHandler}/>
+        <Button val='-' onclick={numberClickHandler}/>
+        <Button val={3} onclick={numberClickHandler}/>
+        <Button val={2} onclick={numberClickHandler}/>
+        <Button val={1} onclick={numberClickHandler}/>
+        <Button val='+' onclick={numberClickHandler}/>
+        <Button val='=' onclick={numberClickHandler}/>
+        <Button val={0} onclick={numberClickHandler}/>
+        <Button val='clr' onclick={numberClickHandler}/>
       </div>
     </div>
   );
