@@ -56,3 +56,7 @@
 .button:hover{
   background-color: #7c7777;
 }
+
+.clrbtn{
+  background: red;;
+}
