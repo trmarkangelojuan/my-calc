@@ -100,6 +100,7 @@ export default function App() {
       <Helmet>
         <title>My Calculator</title>
         <meta name="description" content="This is a calculator app."/>
+        <meta property="og:cache-control" content="no-cache" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="My-Calc" />
         <meta property="og:title" content="Gelo's Calculator" />
