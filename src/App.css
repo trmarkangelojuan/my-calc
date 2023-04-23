@@ -14,7 +14,6 @@
   flex-direction: column;
   border: 5px solid #000;
   box-shadow: 5px 10px #2f2f2f;
-
 }
 
 .displaySection input{
@@ -53,10 +52,24 @@
   box-shadow: 5px 5px #888888;
 }
 
+.clrbutton{
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: rgb(165, 35, 35);
+  color: #f3f3f3;
+  font-size: large;
+  box-shadow: 5px 5px #888888;
+}
+
 .button:hover{
   background-color: #7c7777;
 }
 
 .clrbtn{
   background: red;;
+}
+
+.red{
+  background-color: blue;
 }

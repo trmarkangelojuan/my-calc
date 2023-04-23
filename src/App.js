@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-
+import {Helmet, HelmetProvider} from 'react-helmet-async'
 function Button({val, onclick}){
   return (
     <div>
@@ -94,29 +94,44 @@ export default function App() {
   //var arr = ["/", "9", "8", "7", "*" ,"6", "5", "4", "-","3","2","1", "+", "=", "0", "clr"];    
     
   return (
-    <div className="body">
-
-      <Display disp={disp}/>
+    <HelmetProvider>
+    <>
       
-      <div className='buttonsSection'>
-        <Button val='/' onclick={showOperator}/>
-        <Button val='9' onclick={showNumber}/>
-        <Button val='8' onclick={showNumber}/>
-        <Button val='7' onclick={showNumber}/>
-        <Button val='*' onclick={showOperator}/>
-        <Button val='6' onclick={showNumber}/>
-        <Button val='5' onclick={showNumber}/>
-        <Button val='4' onclick={showNumber}/>
-        <Button val='-' onclick={showOperator}/>
-        <Button val='3' onclick={showNumber}/>
-        <Button val='2' onclick={showNumber}/>
-        <Button val='1' onclick={showNumber}/>
-        <Button val='+' onclick={showOperator}/>
-        <Button val='=' onclick={compute}/>
-        <Button val='0' onclick={showNumber}/>
-        <Button val='clr' onclick={clearDisplay}/>
+      <Helmet>
+        <title>My Calculator</title>
+        <meta name="description" content="This is a calculator app."/>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="My-Calc" />
+        <meta property="og:title" content="Gelo's Calculator" />
+        <meta property="og:description" content="This is a calculator app."/>
+        <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+        <meta property="og:url" content={window.location.href}/>
+      </Helmet>
+      
+      <div className="body">
+        <Display disp={disp}/>
+        
+        <div className='buttonsSection'>
+          <Button val='/' onclick={showOperator}/>
+          <Button val='9' onclick={showNumber}/>
+          <Button val='8' onclick={showNumber}/>
+          <Button val='7' onclick={showNumber}/>
+          <Button val='*' onclick={showOperator}/>
+          <Button val='6' onclick={showNumber}/>
+          <Button val='5' onclick={showNumber}/>
+          <Button val='4' onclick={showNumber}/>
+          <Button val='-' onclick={showOperator}/>
+          <Button val='3' onclick={showNumber}/>
+          <Button val='2' onclick={showNumber}/>
+          <Button val='1' onclick={showNumber}/>
+          <Button val='+' onclick={showOperator}/>
+          <Button val='=' onclick={compute}/>
+          <Button val='0' onclick={showNumber}/>
+          <Button val='clr' onclick={clearDisplay}/>
+        </div>
       </div>
-    </div>
+    </>
+    </HelmetProvider>
   );
 }
 
